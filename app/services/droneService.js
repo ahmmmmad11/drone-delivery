@@ -1,6 +1,7 @@
-const { Drone, sequelize} = require('@/app/models/index.js');
+const { Drone, Delivery, Order, sequelize} = require('@/app/models/index.js');
 const droneStatus = require('@/app/enums/droneStatues.js');
 const {Op} = require('sequelize');
+const orderStatus = require('@/app/enums/orderStatus.js');
 
 class DroneService {
     async getDrones(
@@ -132,7 +133,7 @@ class DroneService {
     async updateCurrentOrderLocation(droneId, location) {
         let {order} = await this.getCurrentDroneOrder(droneId)
 
-        if (! order || order.status === orderStatus.PENDING) {
+        if (! order || ['cancelled', 'delivered'].includes(order.status)) {
             return
         }
 

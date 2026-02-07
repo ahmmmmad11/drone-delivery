@@ -8,19 +8,9 @@ const droneService = require('@/app/services/droneService.js');
 module.exports = {
     show: async (req, res) => {
         const droneId = req.user.userableId
-        const orderId = req.params.id
-        const service = new orderService()
+        const droneSer = new droneService()
 
-        let order = await service.getOrder(orderId, {}, {
-            model: Delivery,
-            as: 'deliveries',
-            where: {
-                droneId: droneId,
-                status: {
-                    [Op.in]: ['pending', 'collected']
-                }
-            }
-        })
+        let {order} = await droneSer.getCurrentDroneOrder(droneId)
 
         if (! order) {
             return res.status(404).json({
@@ -44,7 +34,9 @@ module.exports = {
             })
         }
 
-        if (await droneSer.getCurrentDroneOrder(droneId)) {
+        const {order} = await droneSer.getCurrentDroneOrder(droneId)
+
+        if (order) {
             return res.status(400).json({
                 message: 'Drone already has an assigned order'
             })

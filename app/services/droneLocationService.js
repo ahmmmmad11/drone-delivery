@@ -14,7 +14,7 @@ class DroneLocationService {
             location: location
         });
 
-        service.updateCurrentOrderLocation(droneId, location)
+        await service.updateCurrentOrderLocation(droneId, location)
 
         return droneLocation;
     }

@@ -13,7 +13,7 @@ router.use('/', authMiddleware)
 
 router.post('/set-location', updateLocationRequest,  locationController)
 router.post('/orders/reserve', ordersController.reserve)
-router.get('/orders/:id', ordersController.show)
+router.get('/orders/current-order', ordersController.show)
 router.patch('/set-broken', droneController.setBroken)
 router.patch('/orders/:id/collected',  ordersController.collected)
 router.patch('/orders/:id/delivered',  ordersController.delivered)
