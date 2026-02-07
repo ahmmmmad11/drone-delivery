@@ -1,0 +1,37 @@
+{
+  "name": "penny",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "nodemon --import ./my-aliases.mjs ./bin/www --ignore public/",
+    "pretest": "npx sequelize-cli db:migrate",
+    "test": "SET NODE_ENV=test & mocha --recursive --exit"
+  },
+  "dependencies": {
+    "bcrypt": "^6.0.0",
+    "cookie-parser": "~1.4.4",
+    "debug": "~2.6.9",
+    "dotenv": "^17.2.4",
+    "express": "^4.22.1",
+    "http-errors": "~1.6.3",
+    "jsonwebtoken": "^9.0.3",
+    "module-alias": "^2.3.4",
+    "morgan": "^1.10.1",
+    "mysql2": "^3.16.3",
+    "socket.io": "^4.8.3"
+  },
+  "devDependencies": {
+    "chai": "^6.2.2",
+    "nodemon": "^3.1.11",
+    "sequelize": "^6.37.7",
+    "sequelize-cli": "^6.6.5"
+  },
+  "_moduleAliases": {
+    "@": ".",
+    "@app": "./app",
+    "@enums": "./app/enums"
+  },
+  "_moduleDirectories": [
+    "node_modules_custom"
+  ]
+}
