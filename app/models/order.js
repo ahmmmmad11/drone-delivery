@@ -53,7 +53,9 @@ module.exports = (sequelize, DataTypes) => {
     originAddress: DataTypes.JSON,
     destinationAddress: DataTypes.JSON,
     originLocation: DataTypes.JSON,
+    currentLocation: DataTypes.JSON,
     destinationLocation: DataTypes.JSON,
+    reserved: DataTypes.BOOLEAN,
     collectedAt: DataTypes.DATE,
     deliveredAt: DataTypes.DATE,
   }, {

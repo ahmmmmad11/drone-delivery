@@ -38,6 +38,15 @@ module.exports = {
         allowNull: false,
         type: Sequelize.JSON
       },
+      currentLocation: {
+        allowNull: false,
+        type: Sequelize.JSON
+      },
+      reserved: {
+        allowNull: false,
+        type: Sequelize.BOOLEAN,
+        default: false
+      },
       collectedAt: {
         allowNull: true,
         type: Sequelize.DATE

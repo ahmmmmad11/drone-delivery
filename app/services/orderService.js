@@ -64,6 +64,7 @@ class OrderService {
             originAddress: orderData.originAddress,
             destinationAddress: orderData.destinationAddress,
             originLocation: orderData.originLocation,
+            currentLocation: orderData.originLocation,
             destinationLocation: orderData.destinationLocation,
             status: orderStatus.PENDING,
         })
@@ -76,11 +77,18 @@ class OrderService {
             throw new Error('order not found')
         }
 
+        let currentLocation =  order.currentLocation
+
+        if (order.originLocation.lat === order.currentLocation.lat && order.originLocation.lng === order.currentLocation.lng) {
+            currentLocation = orderData.originLocation ?? order.originLocation
+        }
+
         return await order.update({
             originAddress: orderData.originAddress ?? order.originAddress,
             destinationAddress: orderData.destinationAddress ?? order.destinationAddress,
             originLocation: orderData.originLocation ?? order.originLocation,
             destinationLocation: orderData.destinationLocation ?? order.destinationLocation,
+            currentLocation: currentLocation
         })
     }
 

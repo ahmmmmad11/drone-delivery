@@ -3,6 +3,7 @@ const { Delivery } = require('@/app/models/index.js');
 const orderService = require('@/app/services/orderService.js');
 const orderStatus = require('@/app/enums/orderStatus.js');
 const reserveOrderService = require('@/app/services/reserveOrderService.js');
+const droneService = require('@/app/services/droneService.js');
 
 module.exports = {
     show: async (req, res) => {
@@ -34,7 +35,20 @@ module.exports = {
     reserve: async (req, res) => {
         const droneId = req.user.userableId
         const service = new reserveOrderService()
-        console.log('here')
+        const droneSer = new droneService()
+        const drone = await droneSer.getDrone(droneId)
+
+        if (drone.status === 'broken') {
+            return res.status(400).json({
+                message: 'Drone is broken and cannot reserve orders'
+            })
+        }
+
+        if (await droneSer.getCurrentDroneOrder(droneId)) {
+            return res.status(400).json({
+                message: 'Drone already has an assigned order'
+            })
+        }
 
         try {
             const order = await service.reserveOrderForDrone( droneId)

@@ -1,5 +1,6 @@
-const { Drone } = require('@/app/models/index.js');
+const { Drone, sequelize} = require('@/app/models/index.js');
 const droneStatus = require('@/app/enums/droneStatues.js');
+const {Op} = require('sequelize');
 
 class DroneService {
     async getDrones(
@@ -80,9 +81,13 @@ class DroneService {
             throw new Error('drone is already broken')
         }
 
-        return await drone.update({
+        drone =  await drone.update({
             status: droneStatus.BROKEN,
         })
+
+        this.dropCurrenOrder(droneId)
+
+        return drone
     }
 
     async setFixed(droneId) {
@@ -98,6 +103,70 @@ class DroneService {
 
         return await drone.update({
             status: droneStatus.ACTIVE,
+        })
+    }
+
+    async getCurrentDroneOrder(droneId) {
+        const delivery = await Delivery.findOne({
+            where: {
+                droneId: droneId,
+                status: {
+                    [Op.notIn]: ['failed', 'delivered', 'cancelled']
+                }
+            },
+            include: [{
+                model: Order,
+                as: 'order',
+                where: {
+                    status: {
+                        [Op.notIn]: ['cancelled', 'delivered']
+                    }
+                }
+            }],
+            order: [['createdAt', 'DESC']] // Get the most recent active delivery
+        });
+
+        return {delivery: delivery, order: delivery?.order || null};
+    }
+
+    async updateCurrentOrderLocation(droneId, location) {
+        let {order} = await this.getCurrentDroneOrder(droneId)
+
+        if (! order || order.status === orderStatus.PENDING) {
+            return
+        }
+
+        return await order.update({
+            currentLocation: location
+        })
+    }
+
+    async dropCurrenOrder(droneId) {
+        let {delivery, order} = await this.getCurrentDroneOrder(droneId)
+
+        let transaction = await sequelize.transaction()
+
+        try {
+            if (delivery) {
+                await delivery.update({
+                    status: 'failed'
+                }, {transaction})
+            }
+
+            if (order) {
+                await order.update({
+                    reserved: false
+                }, {transaction})
+            }
+
+            await transaction.commit()
+        } catch (error) {
+            await transaction.rollback()
+            throw error
+        }
+
+        return await order.update({
+            currentLocation: null
         })
     }
 }
