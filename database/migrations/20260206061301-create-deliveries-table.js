@@ -23,7 +23,7 @@ module.exports = {
         type: Sequelize.STRING
       },
       location: {
-        allowNull: false,
+        allowNull: true,
         type: Sequelize.JSON
       },
       createdAt: {
