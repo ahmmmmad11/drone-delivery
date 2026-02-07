@@ -34,6 +34,7 @@ module.exports = {
     reserve: async (req, res) => {
         const droneId = req.user.userableId
         const service = new reserveOrderService()
+        console.log('here')
 
         try {
             const order = await service.reserveOrderForDrone( droneId)
@@ -67,6 +68,12 @@ module.exports = {
         if (! order) {
             return res.status(404).json({
                 message: 'Order not found or not assigned to this drone'
+            })
+        }
+
+        if (order.status === orderStatus.COLLECTED) {
+            return res.status(400).json({
+                message: 'Order has already been collected'
             })
         }
 
@@ -104,7 +111,13 @@ module.exports = {
             })
         }
 
-        if (order.status !== orderStatus.PENDING) {
+        if (order.status === orderStatus.DELIVERED) {
+            return res.status(400).json({
+                message: 'Order has already been delivered'
+            })
+        }
+
+        if (order.status !== orderStatus.COLLECTED) {
             return res.status(400).json({
                 message: 'Order cannot be collected in its current status'
             })
