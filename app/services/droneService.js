@@ -52,18 +52,6 @@ class DroneService {
         };
     }
 
-    async create(data) {
-        return await Drone.create({
-            creatorId: data.creatorId,
-            creatorType: data.creatorType,
-            originAddress: data.originAddress,
-            destinationAddress: data.destinationAddress,
-            originLocation: data.originLocation,
-            destinationLocation: data.destinationLocation,
-            status: droneStatus.PENDING,
-        })
-    }
-
     async getDrone(droneId, filters = {}, include = []) {
         return  await Drone.findByPk(droneId, {
                 where: filters,
