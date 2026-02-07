@@ -22,7 +22,8 @@ module.exports = (sequelize, DataTypes) => {
   }, {
     sequelize,
     modelName: 'DroneLocation',
-    tableName: 'drone_locations'
+    tableName: 'drone_locations',
+    timestamps: false,
   });
 
   return DroneLocation;
