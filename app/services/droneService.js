@@ -74,7 +74,7 @@ class DroneService {
             status: droneStatus.BROKEN,
         })
 
-        this.dropCurrenOrder(droneId)
+        await this.dropCurrenOrder(droneId)
 
         return drone
     }
@@ -154,9 +154,7 @@ class DroneService {
             throw error
         }
 
-        return await order.update({
-            currentLocation: null
-        })
+        return order
     }
 }
 
