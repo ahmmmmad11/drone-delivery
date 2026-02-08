@@ -2,7 +2,6 @@ const { expect } = require('chai');
 const path = require('path');
 const testConfig = require('../config');
 
-// Load modules using test configuration
 const { Drone, Client, Delivery, Order, sequelize, DroneLocation } = testConfig.requireModule(testConfig.MODELS_PATH);
 const DroneService = testConfig.requireModule(path.join(testConfig.SERVICES_PATH, 'droneService.js'));
 const droneStatus = testConfig.requireModule(path.join(testConfig.ENUMS_PATH, 'droneStatues.js'));
@@ -107,7 +106,7 @@ describe('DroneService - Integration Tests', function() {
                     "city": "Manama",
                     "street": "255 st"
                 },
-                "distinationAddress": {
+                "destinationAddress": {
                     "country": "Bahrain",
                     "state": "Capital",
                     "city": "Manama",
@@ -168,7 +167,7 @@ describe('DroneService - Integration Tests', function() {
                     "city": "Manama",
                     "street": "255 st"
                 },
-                "distinationAddress": {
+                "destinationAddress": {
                     "country": "Bahrain",
                     "state": "Capital",
                     "city": "Manama",
@@ -233,7 +232,7 @@ describe('DroneService - Integration Tests', function() {
                     "city": "Manama",
                     "street": "255 st"
                 },
-                "distinationAddress": {
+                "destinationAddress": {
                     "country": "Bahrain",
                     "state": "Capital",
                     "city": "Manama",
@@ -354,7 +353,7 @@ describe('DroneService - Integration Tests', function() {
                     "city": "Manama",
                     "street": "255 st"
                 },
-                "distinationAddress": {
+                "destinationAddress": {
                     "country": "Bahrain",
                     "state": "Capital",
                     "city": "Manama",
