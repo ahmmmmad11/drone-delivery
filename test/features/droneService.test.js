@@ -8,11 +8,7 @@ const droneStatus = testConfig.requireModule(path.join(testConfig.ENUMS_PATH, 'd
 const orderStatus = require('@/app/enums/orderStatus')
 const TestMigrationHelper = require('../migrationHelper');
 
-/**
- * Integration tests - These tests use a real database
- * Run migrations before tests and clean up after
- */
-describe('DroneService - Integration Tests', function() {
+describe('Test droneService', function() {
     this.timeout(30000); // Longer timeout for database operations
 
     let droneService;
@@ -23,12 +19,6 @@ describe('DroneService - Integration Tests', function() {
         migrationHelper = new TestMigrationHelper();
         await migrationHelper.runMigrations();
         console.log('Database ready for integration tests');
-    });
-
-    // Clean up database after all tests
-    after(async () => {
-        await sequelize.close();
-        console.log('Database cleaned up');
     });
 
     beforeEach(() => {
