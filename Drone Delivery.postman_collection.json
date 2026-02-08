@@ -1,0 +1,689 @@
+{
+  "info": {
+    "_postman_id": "4c38c847-9470-4635-b82a-78890b1325bb",
+    "name": "Drone Delivery",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "16294366",
+    "_collection_link": "https://go.postman.co/collection/16294366-4c38c847-9470-4635-b82a-78890b1325bb?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "enduser",
+      "item": [
+        {
+          "name": "create order",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywidXNlcmFibGVUeXBlIjoiQ2xpZW50IiwidXNlcmFibGVJZCI6MSwibmFtZSI6ImNsaWVudCAxIiwiaWF0IjoxNzcwNDQxOTcxfQ.bZuD-HY_LCSrHUDKNi4Xls_x-t1JAUcubV2fSJwo2yk",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"description\": \"delivery to manama\",\r\n    \"originAddress\": {\r\n        \"country\": \"Bahrain\",\r\n        \"state\": \"Capital\",\r\n        \"city\": \"Manama\",\r\n        \"street\": \"255 st\"\r\n    },\r\n    \"distinationAddress\": {\r\n        \"country\": \"Bahrain\",\r\n        \"state\": \"Capital\",\r\n        \"city\": \"Manama\",\r\n        \"street\": \"251 st\"\r\n    },\r\n    \"originLocation\": {\r\n        \"lat\": 53.4894849,\r\n        \"lng\": 53.4894249\r\n    },\r\n    \"destinationLocation\": {\r\n        \"lat\": 53.4894848,\r\n        \"lng\": 53.4894248\r\n    }\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{url}}/users/orders",
+              "host": [
+                "{{url}}"
+              ],
+              "path": [
+                "users",
+                "orders"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "get Orders",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywidXNlcmFibGVUeXBlIjoiQ2xpZW50IiwidXNlcmFibGVJZCI6MSwibmFtZSI6ImNsaWVudCAxIiwiaWF0IjoxNzcwNDQxOTcxfQ.bZuD-HY_LCSrHUDKNi4Xls_x-t1JAUcubV2fSJwo2yk",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"description\": \"delivery to manama\",\r\n    \"originAddress\": {\r\n        \"country\": \"Bahrain\",\r\n        \"state\": \"Capital\",\r\n        \"city\": \"Manama\",\r\n        \"street\": \"255 st\"\r\n    },\r\n    \"destinationAddress\": {\r\n        \"country\": \"Bahrain\",\r\n        \"state\": \"Capital\",\r\n        \"city\": \"Manama\",\r\n        \"street\": \"251 st\"\r\n    },\r\n    \"originLocation\": {\r\n        \"lat\": 53.4894849,\r\n        \"lng\": 53.4894249\r\n    },\r\n    \"destinationLocation\": {\r\n        \"lat\": 53.4894848,\r\n        \"lng\": 53.4894248\r\n    }\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{url}}/users/orders",
+              "host": [
+                "{{url}}"
+              ],
+              "path": [
+                "users",
+                "orders"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "get single order",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywidXNlcmFibGVUeXBlIjoiQ2xpZW50IiwidXNlcmFibGVJZCI6MSwibmFtZSI6ImNsaWVudCAxIiwiaWF0IjoxNzcwNDQ4MTQ0fQ.uIcTGMyJf05WlO6H7s-q7hG3mHPqvys9AHij5YPDCR4",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"description\": \"delivery to manama\",\r\n    \"originAddress\": {\r\n        \"country\": \"Bahrain\",\r\n        \"state\": \"Capital\",\r\n        \"city\": \"Manama\",\r\n        \"street\": \"255 st\"\r\n    },\r\n    \"destinationAddress\": {\r\n        \"country\": \"Bahrain\",\r\n        \"state\": \"Capital\",\r\n        \"city\": \"Manama\",\r\n        \"street\": \"251 st\"\r\n    },\r\n    \"originLocation\": {\r\n        \"lat\": 53.4894849,\r\n        \"lng\": 53.4894249\r\n    },\r\n    \"destinationLocation\": {\r\n        \"lat\": 53.4894848,\r\n        \"lng\": 53.4894248\r\n    }\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{url}}/users/orders/1",
+              "host": [
+                "{{url}}"
+              ],
+              "path": [
+                "users",
+                "orders",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "withdraw Order (cancel)",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywidXNlcmFibGVUeXBlIjoiQ2xpZW50IiwidXNlcmFibGVJZCI6MSwibmFtZSI6ImNsaWVudCAxIiwiaWF0IjoxNzcwNDQxOTcxfQ.bZuD-HY_LCSrHUDKNi4Xls_x-t1JAUcubV2fSJwo2yk",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "PATCH",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"description\": \"delivery to manama\",\r\n    \"originAddress\": {\r\n        \"country\": \"Bahrain\",\r\n        \"state\": \"Capital\",\r\n        \"city\": \"Manama\",\r\n        \"street\": \"255 st\"\r\n    },\r\n    \"destinationAddress\": {\r\n        \"country\": \"Bahrain\",\r\n        \"state\": \"Capital\",\r\n        \"city\": \"Manama\",\r\n        \"street\": \"251 st\"\r\n    },\r\n    \"originLocation\": {\r\n        \"lat\": 53.4894849,\r\n        \"lng\": 53.4894249\r\n    },\r\n    \"destinationLocation\": {\r\n        \"lat\": 53.4894848,\r\n        \"lng\": 53.4894248\r\n    }\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{url}}/users/orders/1/cancel",
+              "host": [
+                "{{url}}"
+              ],
+              "path": [
+                "users",
+                "orders",
+                "1",
+                "cancel"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "admin",
+      "item": [
+        {
+          "name": "create order",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywidXNlcmFibGVUeXBlIjoiQ2xpZW50IiwidXNlcmFibGVJZCI6MSwibmFtZSI6ImNsaWVudCAxIiwiaWF0IjoxNzcwNDQxOTcxfQ.bZuD-HY_LCSrHUDKNi4Xls_x-t1JAUcubV2fSJwo2yk",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"description\": \"delivery to manama\",\r\n    \"originAddress\": {\r\n        \"country\": \"Bahrain\",\r\n        \"state\": \"Capital\",\r\n        \"city\": \"Manama\",\r\n        \"street\": \"255 st\"\r\n    },\r\n    \"distinationAddress\": {\r\n        \"country\": \"Bahrain\",\r\n        \"state\": \"Capital\",\r\n        \"city\": \"Manama\",\r\n        \"street\": \"251 st\"\r\n    },\r\n    \"originLocation\": {\r\n        \"lat\": 53.4894849,\r\n        \"lng\": 53.4894249\r\n    },\r\n    \"destinationLocation\": {\r\n        \"lat\": 53.4894848,\r\n        \"lng\": 53.4894248\r\n    }\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{url}}/admins/orders",
+              "host": [
+                "{{url}}"
+              ],
+              "path": [
+                "admins",
+                "orders"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "update order",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcmFibGVUeXBlIjoiQWRtaW4iLCJ1c2VyYWJsZUlkIjoxLCJuYW1lIjoiYWRtaW4gMSIsImlhdCI6MTc3MDQ1NDI2Mn0.OZzWgCy0U89cucW359TF_wFSYYtqK-7Njq5NhgFs39A",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"description\": \"delivery to manama\",\r\n    \"originAddress\": {\r\n        \"country\": \"Bahrain\",\r\n        \"state\": \"Capital\",\r\n        \"city\": \"Manama\",\r\n        \"street\": \"255 st\"\r\n    },\r\n    \"distinationAddress\": {\r\n        \"country\": \"Bahrain\",\r\n        \"state\": \"Capital\",\r\n        \"city\": \"Manama\",\r\n        \"street\": \"251 st\"\r\n    },\r\n    \"originLocation\": {\r\n        \"lat\": 53.2294849,\r\n        \"lng\": 53.2294249\r\n    },\r\n    \"destinationLocation\": {\r\n        \"lat\": 53.2294848,\r\n        \"lng\": 53.2294248\r\n    }\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{url}}/admins/orders/1",
+              "host": [
+                "{{url}}"
+              ],
+              "path": [
+                "admins",
+                "orders",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "get Orders",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywidXNlcmFibGVUeXBlIjoiQ2xpZW50IiwidXNlcmFibGVJZCI6MSwibmFtZSI6ImNsaWVudCAxIiwiaWF0IjoxNzcwNDQxOTcxfQ.bZuD-HY_LCSrHUDKNi4Xls_x-t1JAUcubV2fSJwo2yk",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"description\": \"delivery to manama\",\r\n    \"originAddress\": {\r\n        \"country\": \"Bahrain\",\r\n        \"state\": \"Capital\",\r\n        \"city\": \"Manama\",\r\n        \"street\": \"255 st\"\r\n    },\r\n    \"destinationAddress\": {\r\n        \"country\": \"Bahrain\",\r\n        \"state\": \"Capital\",\r\n        \"city\": \"Manama\",\r\n        \"street\": \"251 st\"\r\n    },\r\n    \"originLocation\": {\r\n        \"lat\": 53.4894849,\r\n        \"lng\": 53.4894249\r\n    },\r\n    \"destinationLocation\": {\r\n        \"lat\": 53.4894848,\r\n        \"lng\": 53.4894248\r\n    }\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{url}}/admins/orders",
+              "host": [
+                "{{url}}"
+              ],
+              "path": [
+                "admins",
+                "orders"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "get single order",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywidXNlcmFibGVUeXBlIjoiQ2xpZW50IiwidXNlcmFibGVJZCI6MSwibmFtZSI6ImNsaWVudCAxIiwiaWF0IjoxNzcwNDQ4MTQ0fQ.uIcTGMyJf05WlO6H7s-q7hG3mHPqvys9AHij5YPDCR4",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"description\": \"delivery to manama\",\r\n    \"originAddress\": {\r\n        \"country\": \"Bahrain\",\r\n        \"state\": \"Capital\",\r\n        \"city\": \"Manama\",\r\n        \"street\": \"255 st\"\r\n    },\r\n    \"destinationAddress\": {\r\n        \"country\": \"Bahrain\",\r\n        \"state\": \"Capital\",\r\n        \"city\": \"Manama\",\r\n        \"street\": \"251 st\"\r\n    },\r\n    \"originLocation\": {\r\n        \"lat\": 53.4894849,\r\n        \"lng\": 53.4894249\r\n    },\r\n    \"destinationLocation\": {\r\n        \"lat\": 53.4894848,\r\n        \"lng\": 53.4894248\r\n    }\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{url}}/admins/orders/1",
+              "host": [
+                "{{url}}"
+              ],
+              "path": [
+                "admins",
+                "orders",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "get drones",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcmFibGVUeXBlIjoiQWRtaW4iLCJ1c2VyYWJsZUlkIjoxLCJuYW1lIjoiYWRtaW4gMSIsImlhdCI6MTc3MDQ1NDI2Mn0.OZzWgCy0U89cucW359TF_wFSYYtqK-7Njq5NhgFs39A",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"description\": \"delivery to manama\",\r\n    \"originAddress\": {\r\n        \"country\": \"Bahrain\",\r\n        \"state\": \"Capital\",\r\n        \"city\": \"Manama\",\r\n        \"street\": \"255 st\"\r\n    },\r\n    \"destinationAddress\": {\r\n        \"country\": \"Bahrain\",\r\n        \"state\": \"Capital\",\r\n        \"city\": \"Manama\",\r\n        \"street\": \"251 st\"\r\n    },\r\n    \"originLocation\": {\r\n        \"lat\": 53.4894849,\r\n        \"lng\": 53.4894249\r\n    },\r\n    \"destinationLocation\": {\r\n        \"lat\": 53.4894848,\r\n        \"lng\": 53.4894248\r\n    }\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{url}}/admins/drones",
+              "host": [
+                "{{url}}"
+              ],
+              "path": [
+                "admins",
+                "drones"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "mark drone as broken",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcmFibGVUeXBlIjoiQWRtaW4iLCJ1c2VyYWJsZUlkIjoxLCJuYW1lIjoiYWRtaW4gMSIsImlhdCI6MTc3MDQ1NDI2Mn0.OZzWgCy0U89cucW359TF_wFSYYtqK-7Njq5NhgFs39A",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "PATCH",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"description\": \"delivery to manama\",\r\n    \"originAddress\": {\r\n        \"country\": \"Bahrain\",\r\n        \"state\": \"Capital\",\r\n        \"city\": \"Manama\",\r\n        \"street\": \"255 st\"\r\n    },\r\n    \"destinationAddress\": {\r\n        \"country\": \"Bahrain\",\r\n        \"state\": \"Capital\",\r\n        \"city\": \"Manama\",\r\n        \"street\": \"251 st\"\r\n    },\r\n    \"originLocation\": {\r\n        \"lat\": 53.4894849,\r\n        \"lng\": 53.4894249\r\n    },\r\n    \"destinationLocation\": {\r\n        \"lat\": 53.4894848,\r\n        \"lng\": 53.4894248\r\n    }\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{url}}/admins/drones/1/broken",
+              "host": [
+                "{{url}}"
+              ],
+              "path": [
+                "admins",
+                "drones",
+                "1",
+                "broken"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "mark drone as fixed",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcmFibGVUeXBlIjoiQWRtaW4iLCJ1c2VyYWJsZUlkIjoxLCJuYW1lIjoiYWRtaW4gMSIsImlhdCI6MTc3MDQ1NDI2Mn0.OZzWgCy0U89cucW359TF_wFSYYtqK-7Njq5NhgFs39A",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "PATCH",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"description\": \"delivery to manama\",\r\n    \"originAddress\": {\r\n        \"country\": \"Bahrain\",\r\n        \"state\": \"Capital\",\r\n        \"city\": \"Manama\",\r\n        \"street\": \"255 st\"\r\n    },\r\n    \"destinationAddress\": {\r\n        \"country\": \"Bahrain\",\r\n        \"state\": \"Capital\",\r\n        \"city\": \"Manama\",\r\n        \"street\": \"251 st\"\r\n    },\r\n    \"originLocation\": {\r\n        \"lat\": 53.4894849,\r\n        \"lng\": 53.4894249\r\n    },\r\n    \"destinationLocation\": {\r\n        \"lat\": 53.4894848,\r\n        \"lng\": 53.4894248\r\n    }\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{url}}/admins/drones/1/fixed",
+              "host": [
+                "{{url}}"
+              ],
+              "path": [
+                "admins",
+                "drones",
+                "1",
+                "fixed"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "drone",
+      "item": [
+        {
+          "name": "update location",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"location\": {\r\n        \"lat\": 53.4894848,\r\n        \"lng\": 53.4894248\r\n    }\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{url}}/drones/set-location",
+              "host": [
+                "{{url}}"
+              ],
+              "path": [
+                "drones",
+                "set-location"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "grab order",
+          "request": {
+            "method": "PATCH",
+            "header": [],
+            "url": {
+              "raw": "{{url}}/drones/orders/1/collected",
+              "host": [
+                "{{url}}"
+              ],
+              "path": [
+                "drones",
+                "orders",
+                "1",
+                "collected"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "deliver order",
+          "request": {
+            "method": "PATCH",
+            "header": [],
+            "url": {
+              "raw": "{{url}}/drones/orders/1/delivered",
+              "host": [
+                "{{url}}"
+              ],
+              "path": [
+                "drones",
+                "orders",
+                "1",
+                "delivered"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "set broken",
+          "request": {
+            "method": "PATCH",
+            "header": [],
+            "url": {
+              "raw": "{{url}}/drones/set-broken",
+              "host": [
+                "{{url}}"
+              ],
+              "path": [
+                "drones",
+                "set-broken"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "reserve order",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcmFibGVUeXBlIjoiQWRtaW4iLCJ1c2VyYWJsZUlkIjoxLCJuYW1lIjoiYWRtaW4gMSIsImlhdCI6MTc3MDQ1NDI2Mn0.OZzWgCy0U89cucW359TF_wFSYYtqK-7Njq5NhgFs39A",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{url}}/drones/orders/reserve",
+              "host": [
+                "{{url}}"
+              ],
+              "path": [
+                "drones",
+                "orders",
+                "reserve"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "current order",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{url}}/drones/orders/current-order",
+              "host": [
+                "{{url}}"
+              ],
+              "path": [
+                "drones",
+                "orders",
+                "current-order"
+              ]
+            }
+          },
+          "response": []
+        }
+      ],
+      "auth": {
+        "type": "bearer",
+        "bearer": [
+          {
+            "key": "token",
+            "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NSwidXNlcmFibGVUeXBlIjoiRHJvbmUiLCJ1c2VyYWJsZUlkIjoxLCJuYW1lIjoiZHJvbmUgMSIsImlhdCI6MTc3MDQ3ODgyOX0.BHEt6zh2dYhLTyBvjZ2-dBZdbe-dqfoCqgTEQDnpZkU",
+            "type": "string"
+          }
+        ]
+      },
+      "event": [
+        {
+          "listen": "prerequest",
+          "script": {
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {},
+            "exec": [
+              ""
+            ]
+          }
+        },
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {},
+            "exec": [
+              ""
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "Login",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"name\": \"client 2\",\r\n    \"type\": \"enduser\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{url}}/login",
+          "host": [
+            "{{url}}"
+          ],
+          "path": [
+            "login"
+          ]
+        }
+      },
+      "response": []
+    }
+  ],
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "requests": {},
+        "exec": [
+          ""
+        ]
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "requests": {},
+        "exec": [
+          ""
+        ]
+      }
+    }
+  ],
+  "variable": [
+    {
+      "key": "url",
+      "value": ""
+    }
+  ]
+}
