@@ -45,7 +45,7 @@ module.exports = {
       reserved: {
         allowNull: false,
         type: Sequelize.BOOLEAN,
-        default: false
+        defaultValue: false
       },
       collectedAt: {
         allowNull: true,

@@ -1,0 +1,17 @@
+{
+  "require": [
+    "test/setup.js"
+  ],
+  "spec": [
+    "test/**/*.test.js"
+  ],
+  "timeout": 10000,
+  "slow": 1000,
+  "recursive": true,
+  "exit": true,
+  "color": true,
+  "reporter": "spec",
+  "bail": false,
+  "check-leaks": false,
+  "full-trace": true
+}

@@ -23,9 +23,9 @@ module.exports = (req, res, next) => {
         errors.push(...originAddressErrors);
     }
 
-    const distinationAddressErrors = validateAddress(distinationAddress, 'distinationAddress');
-    if (distinationAddressErrors) {
-        errors.push(...distinationAddressErrors);
+    const destinationAddress = validateAddress(distinationAddress, 'destinationAddress');
+    if (destinationAddress) {
+        errors.push(...destinationAddress);
     }
 
     const originLocationErrors = validateLocation(originLocation, 'originLocation');

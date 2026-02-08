@@ -52,18 +52,6 @@ class DroneService {
         };
     }
 
-    async create(data) {
-        return await Drone.create({
-            creatorId: data.creatorId,
-            creatorType: data.creatorType,
-            originAddress: data.originAddress,
-            destinationAddress: data.destinationAddress,
-            originLocation: data.originLocation,
-            destinationLocation: data.destinationLocation,
-            status: droneStatus.PENDING,
-        })
-    }
-
     async getDrone(droneId, filters = {}, include = []) {
         return  await Drone.findByPk(droneId, {
                 where: filters,
@@ -86,7 +74,7 @@ class DroneService {
             status: droneStatus.BROKEN,
         })
 
-        this.dropCurrenOrder(droneId)
+        await this.dropCurrenOrder(droneId)
 
         return drone
     }
@@ -166,9 +154,7 @@ class DroneService {
             throw error
         }
 
-        return await order.update({
-            currentLocation: null
-        })
+        return order
     }
 }
 
